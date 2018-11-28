@@ -98,7 +98,8 @@ static HRESULT WINAPI dismanager_RegisterDispenser(IDispenserManager *iface, IDi
 
     FIXME("(%p)->(%p, %s, %p) stub\n", This, driver, debugstr_w(name), dispenser);
 
-    return E_NOTIMPL;
+    holder_CreateInstance(dispenser);
+    return S_OK;
 }
 
 static HRESULT WINAPI dismanager_GetContext(IDispenserManager *iface, INSTID *id, TRANSID *transid)

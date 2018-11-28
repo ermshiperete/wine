@@ -3,7 +3,8 @@ IMPORTLIB = comsvcs
 IMPORTS   = ole32 uuid
 
 C_SRCS = \
-	main.c
+	main.c \
+	holder.c
 
 IDL_SRCS = \
 	comsvcs_tlb.idl

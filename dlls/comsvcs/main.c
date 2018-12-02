@@ -32,6 +32,8 @@
 #include "wine/heap.h"
 #include "wine/debug.h"
 
+#include "comsvcs_private.h"
+
 WINE_DEFAULT_DEBUG_CHANNEL(comsvcs);
 
 static HINSTANCE COMSVCS_hInstance;
@@ -98,7 +100,7 @@ static HRESULT WINAPI dismanager_RegisterDispenser(IDispenserManager *iface, IDi
 
     FIXME("(%p)->(%p, %s, %p) stub\n", This, driver, debugstr_w(name), dispenser);
 
-    holder_CreateInstance(dispenser);
+    holder_CreateInstance((void**)dispenser);
     return S_OK;
 }
 
